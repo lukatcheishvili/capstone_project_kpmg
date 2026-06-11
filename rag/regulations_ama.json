@@ -1,0 +1,79 @@
+[
+  {
+    "article_id": "AMA-Art-1",
+    "city": "athens",
+    "country": "greece",
+    "law": "AMA Short-Term Rental Framework (Law 4472/2017 as amended)",
+    "title": "Definition and Scope of Short-Term Rental",
+    "text": "Short-term rental (STR) in Greece is defined as the furnished letting of a residential property for a period of fewer than 365 consecutive days to the same tenant, through digital platforms. Any property listed on a digital platform such as Airbnb, Booking.com or similar services falls under this framework. The property owner (host) is classified as either a natural person or a legal entity. Properties subject to this law include entire apartments, houses, rooms within a primary residence, and any furnished residential space offered commercially for short stays.",
+    "compliance_trigger": "all_listings",
+    "compliance_check": "Applies to all short-term rental listings in Greece regardless of property type or size.",
+    "penalty": "N/A — definitional article"
+  },
+  {
+    "article_id": "AMA-Art-2",
+    "city": "athens",
+    "country": "greece",
+    "law": "AMA Short-Term Rental Framework (Law 4472/2017 as amended)",
+    "title": "Mandatory AADE Registration and License Number",
+    "text": "All short-term rental properties in Greece must be registered with the Independent Authority for Public Revenue (AADE — Ανεξάρτητη Αρχή Δημοσίων Εσόδων) before being listed on any digital platform. Upon registration, the AADE issues a unique Short-Term Rental Registration Number (AΜΕΑ — Αριθμός Μητρώου Ενοικιαζόμενης Ακινήτου). This number must be prominently displayed on every online listing. A listing without a valid AADE registration number is operating illegally. The registration must be renewed annually and kept up to date. Failure to register prior to listing constitutes a primary violation of Greek short-term rental law.",
+    "compliance_trigger": "no_license",
+    "compliance_check": "License field is empty or missing (has_license == False). This is the most fundamental compliance violation.",
+    "penalty": "Fine of €5,000 per unlicensed property per calendar year (increased to €10,000 for repeat violations)."
+  },
+  {
+    "article_id": "AMA-Art-3",
+    "city": "athens",
+    "country": "greece",
+    "law": "AMA Short-Term Rental Framework (Law 4472/2017 as amended)",
+    "title": "Night Cap — Primary vs Secondary Residence",
+    "text": "Greek law distinguishes between a primary residence and a secondary property for short-term rental purposes. A natural person may rent their primary residence (or a room within it) for up to 90 nights per calendar year without additional tax obligations. If the annual rental nights exceed 90 for a primary residence, or if the property is a secondary residence used for commercial rental purposes, the income is classified as business income and subject to full business taxation. Properties rented for more than 90 nights per year must also file a special STR income declaration. Exceeding the 90-night threshold without proper business registration constitutes a tax compliance violation.",
+    "compliance_trigger": "high_availability_secondary",
+    "compliance_check": "If estimated_occupancy_l365d implies more than 90 nights AND the property is a secondary home, a tax compliance review is triggered.",
+    "penalty": "Tax surcharge of 15–30% on undeclared rental income plus interest. Criminal prosecution possible for repeated or deliberate violations."
+  },
+  {
+    "article_id": "AMA-Art-4",
+    "city": "athens",
+    "country": "greece",
+    "law": "AMA Short-Term Rental Framework (Law 4472/2017 as amended)",
+    "title": "Tax Declaration Obligations for Hosts",
+    "text": "All rental income derived from short-term rentals must be declared in the host's annual personal income tax return (E1 form). The income must also be declared in the special short-term rental property declaration (E2 form) filed with AADE. Hosts earning rental income above €12,000 per year from short-term rentals are subject to VAT registration obligations. Income from short-term rentals is subject to personal income tax at graduated rates: 15% up to €12,000, 35% for €12,001–35,000, and 45% above €35,000. All hosts operating on digital platforms must also submit quarterly income summaries through the myDATA digital accounting system.",
+    "compliance_trigger": "tax_declaration",
+    "compliance_check": "Applies to all active listings generating rental income. Cross-referenced with estimated_revenue_l365d.",
+    "penalty": "Penalty of 25–100% of undeclared tax liability. Listings operating without tax declaration are subject to immediate suspension."
+  },
+  {
+    "article_id": "AMA-Art-5",
+    "city": "athens",
+    "country": "greece",
+    "law": "AMA Short-Term Rental Framework (Law 4472/2017 as amended)",
+    "title": "Platform Obligations — Display of Registration Number",
+    "text": "Digital platforms facilitating short-term rentals in Greece (including Airbnb, Booking.com, Vrbo, and any comparable service) are legally required to display the AADE short-term rental registration number on each listing page. Platforms must verify the validity of the registration number before publishing a listing. Platforms that knowingly list unregistered properties are subject to regulatory fines. The registration number must appear in a standardised format (e.g., '00XXXXXXXXX') in the listing description or a dedicated compliance field. As of 2023, AADE conducts quarterly cross-checks of platform listing data against its registration database.",
+    "compliance_trigger": "platform_display",
+    "compliance_check": "If license field exists but is malformed or absent from the listing display, this article applies.",
+    "penalty": "Platform fines of up to €500,000 per quarter for systematic non-compliance. Individual listing suspension."
+  },
+  {
+    "article_id": "AMA-Art-6",
+    "city": "athens",
+    "country": "greece",
+    "law": "AMA Short-Term Rental Framework (Law 4472/2017 as amended)",
+    "title": "Multiple Property Restriction and Professional Host Classification",
+    "text": "A natural person (individual, non-business entity) may operate a maximum of 2 short-term rental properties under the simplified AMA framework. Operating 3 or more properties as a natural person requires formal business registration as a STR operator, VAT registration, and compliance with commercial accommodation regulations (Law 4276/2014). Hosts managing 3 or more listings are classified as professional operators regardless of whether the properties are owned, co-owned, or managed under a property management agreement. Professional operators are subject to additional safety inspections, fire safety compliance, and accessible accommodation regulations.",
+    "compliance_trigger": "multi_listing_professional",
+    "compliance_check": "host_total_listings_count >= 3 AND host_type is natural person (non-business). Triggers professional operator classification review.",
+    "penalty": "Reclassification as commercial accommodation operator. Fines of €20,000–€100,000 for operating as unlicensed commercial accommodation."
+  },
+  {
+    "article_id": "AMA-Art-7",
+    "city": "athens",
+    "country": "greece",
+    "law": "AMA Short-Term Rental Framework (Law 4472/2017 as amended)",
+    "title": "Health, Safety and Building Compliance",
+    "text": "All short-term rental properties in Greece must meet minimum health and safety standards including: functioning smoke detectors, carbon monoxide detectors, fire extinguisher on each floor, first aid kit, emergency exit signage for multi-storey buildings, and safe electrical installations. Properties must be structurally sound with valid building permits. Properties built without legal permits (authentically known as 'arbitrary buildings') may not be legally registered for short-term rental. Building permit compliance is verified during AADE registration. The municipality may conduct spot inspections of registered STR properties for safety compliance.",
+    "compliance_trigger": "safety_compliance",
+    "compliance_check": "Applies to all registered properties. Cannot be directly verified from listing data alone — requires physical inspection.",
+    "penalty": "Suspension of registration and listing. Fines of €3,000–€15,000 for safety non-compliance."
+  }
+]

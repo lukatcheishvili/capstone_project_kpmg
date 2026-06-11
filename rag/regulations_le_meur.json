@@ -1,0 +1,79 @@
+[
+  {
+    "article_id": "LeLMeur-Art-1",
+    "city": "paris",
+    "country": "france",
+    "law": "Loi Le Meur (Law No. 2024-1039, November 2024) — Loi visant à remédier aux déséquilibres du marché locatif",
+    "title": "Definition and Scope — Short-Term Furnished Rental",
+    "text": "The Loi Le Meur (Law 2024-1039 of 19 November 2024) governs the rental of furnished residential accommodation for short durations in France. It defines a short-term furnished rental (MEUBLÉ DE TOURISME) as any furnished residential property rented to transient guests for periods of fewer than 90 consecutive days per occupant. This law applies to all properties listed on digital platforms such as Airbnb, Booking.com, Abritel, Vrbo, or any equivalent service. The law applies throughout France but grants municipalities — particularly large urban agglomerations such as Paris, Lyon, Bordeaux, and Nice — enhanced powers to impose additional local restrictions. Paris is subject to the most stringent application of this law.",
+    "compliance_trigger": "all_listings",
+    "compliance_check": "Applies to all short-term rental listings in France regardless of property type.",
+    "penalty": "N/A — definitional article"
+  },
+  {
+    "article_id": "LeLMeur-Art-2",
+    "city": "paris",
+    "country": "france",
+    "law": "Loi Le Meur (Law No. 2024-1039, November 2024)",
+    "title": "Primary Residence — 120-Night Annual Cap",
+    "text": "A host may rent their primary residence as a short-term furnished rental for a maximum of 120 nights per calendar year. This limit applies regardless of the number of individual rentals or guests within those nights. A primary residence is defined as the property in which the host resides for at least 8 months per year. If a host exceeds the 120-night annual limit for their primary residence, the excess rental nights are treated as commercial activity and subject to business taxation. Platforms such as Airbnb are legally required to block listings from accepting new bookings once the 120-night cap has been reached. Paris had previously enforced a 120-night cap under local regulation; the Loi Le Meur now makes this a national statutory limit.",
+    "compliance_trigger": "high_availability_primary",
+    "compliance_check": "If estimated_occupancy_l365d implies more than 120 occupied nights AND the property is a primary residence, cap violation is triggered.",
+    "penalty": "Administrative fine of up to €10,000 per property. Platforms face fines of up to €50,000 for failing to enforce the cap."
+  },
+  {
+    "article_id": "LeLMeur-Art-3",
+    "city": "paris",
+    "country": "france",
+    "law": "Loi Le Meur (Law No. 2024-1039, November 2024)",
+    "title": "Secondary Residence — Mandatory Change of Use Authorisation",
+    "text": "A secondary residence (any property that is not the host's primary residence) may only be used as a short-term furnished rental if the owner has obtained a formal 'changement d'usage' authorisation from the municipality. In Paris, such authorisations are subject to strict quotas and are not freely available. Paris introduced a compensation requirement: for each residential unit converted to tourist use, the owner must convert an equivalent commercial space back to residential use in the same arrondissement (the 'one-for-one' rule). Properties in Paris operating as secondary-residence STRs without a valid changement d'usage authorisation are operating in breach of both the Loi Le Meur and Paris municipal regulations. Secondary-residence STRs are not subject to the 120-night cap — they require the full changement d'usage and are treated as commercial accommodation.",
+    "compliance_trigger": "secondary_residence_no_authorisation",
+    "compliance_check": "If the property is not a primary residence AND it has high year-round availability (suggesting commercial secondary use), a changement d'usage review is triggered.",
+    "penalty": "Fine of up to €50,000 per property. Mandatory reversion to residential use. The municipality may compel the owner to pay €1,000 per day per square metre until the property is returned to residential use."
+  },
+  {
+    "article_id": "LeLMeur-Art-4",
+    "city": "paris",
+    "country": "france",
+    "law": "Loi Le Meur (Law No. 2024-1039, November 2024)",
+    "title": "Mandatory Registration Number and Platform Display",
+    "text": "All short-term furnished rental properties in France must be registered with the local municipality (mairie) and obtain a local registration number. In Paris, this registration is mandatory and issued by the City of Paris. The registration number must be displayed prominently in every online listing. Platforms are legally required to verify registration numbers and to remove listings that do not display a valid number. The Loi Le Meur strengthens existing registration requirements by mandating cross-checks between platform data and municipal registration databases. As of 2025, platforms must submit quarterly listing inventories to municipalities for verification. A listing without a valid registration number is in primary violation of French STR law.",
+    "compliance_trigger": "no_license",
+    "compliance_check": "License field is empty or missing (has_license == False or license is null). Primary compliance violation.",
+    "penalty": "Fine of up to €5,000 per unlicensed listing. Platforms face fines of €12,500 per non-compliant listing discovered during regulatory inspection."
+  },
+  {
+    "article_id": "LeLMeur-Art-5",
+    "city": "paris",
+    "country": "france",
+    "law": "Loi Le Meur (Law No. 2024-1039, November 2024)",
+    "title": "Municipal Veto Powers and Quota Zones",
+    "text": "The Loi Le Meur grants municipalities in France the power to designate specific zones where short-term rentals are prohibited or subject to strict quotas. In Paris, the city council may designate any arrondissement or neighbourhood as a 'zone réglementée' where no new short-term rental authorisations will be granted. Existing authorisations in quota zones may be subject to non-renewal. The law also allows municipalities to set a maximum percentage of residential units in any building that may be converted to short-term rental use. Building co-ownership assemblies (copropriétés) may now ban STR activity in their buildings by a simple majority vote, overriding individual owner rights. Listings in Paris must therefore also comply with the rules of the building in which the property is located.",
+    "compliance_trigger": "quota_zone",
+    "compliance_check": "Listings in high-density Paris neighbourhoods (1st–8th arrondissements) with high STR concentration should be flagged for quota zone review.",
+    "penalty": "Forced delisting from all platforms. Fines of up to €20,000 per property in a prohibited zone."
+  },
+  {
+    "article_id": "LeLMeur-Art-6",
+    "city": "paris",
+    "country": "france",
+    "law": "Loi Le Meur (Law No. 2024-1039, November 2024)",
+    "title": "Revised Tax Treatment — Removal of Fiscal Advantage for Meublés de Tourisme",
+    "text": "The Loi Le Meur significantly reduced the tax advantages previously available to furnished tourist rentals (meublés de tourisme) under the micro-BIC fiscal regime. Before the law, STR income was eligible for a 71% flat-rate deduction (abattement) under micro-BIC, compared to 50% for unfurnished residential rentals. The Loi Le Meur reduced the STR micro-BIC abattement to 30% (non-classified meublés de tourisme) or 50% (classified meublés de tourisme with an official rating). The income ceiling for micro-BIC eligibility for non-classified STRs was also reduced from €77,700 to €15,000 per year. Hosts earning more than €15,000 per year in rental income from non-classified STRs must now use the réel simplifié accounting regime, requiring formal accounts and VAT registration. This change has significant implications for high-revenue Paris listings.",
+    "compliance_trigger": "tax_regime",
+    "compliance_check": "If estimated_revenue_l365d > 15000 AND the listing is non-classified, a tax regime review is triggered.",
+    "penalty": "Back-payment of taxes, penalties of 10–80% of underpaid tax, plus interest. Potential criminal prosecution for deliberate under-declaration."
+  },
+  {
+    "article_id": "LeLMeur-Art-7",
+    "city": "paris",
+    "country": "france",
+    "law": "Loi Le Meur (Law No. 2024-1039, November 2024)",
+    "title": "Platform Obligations — Booking Cap Enforcement and Data Sharing",
+    "text": "Digital platforms facilitating short-term rentals in France bear direct legal responsibility for enforcing the regulatory framework. Specific platform obligations under the Loi Le Meur include: (1) Automatic blocking of bookings once a primary-residence listing reaches 120 nights per year; (2) Verification and display of the municipal registration number for each listing; (3) Refusal to list properties in municipal prohibition zones; (4) Transmission of quarterly booking data to the Direction Générale des Finances Publiques (DGFiP) for tax cross-checking; (5) Transmission of listing inventories to municipalities for quota monitoring. Platforms that fail to comply face regulatory fines and potential suspension of operating licences in France. Airbnb was fined in 2024 for systematic non-compliance with pre-Loi Le Meur registration display requirements.",
+    "compliance_trigger": "platform_obligations",
+    "compliance_check": "If a listing lacks a registration number displayed on the platform, the platform is in breach of this article in addition to the host.",
+    "penalty": "Platform fines of €125,000–€500,000 per quarter depending on scale of non-compliance."
+  }
+]

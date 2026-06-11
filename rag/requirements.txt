@@ -1,0 +1,10 @@
+# Phase 5 — RAG Compliance Agent dependencies
+# Install with: pip install -r rag/requirements.txt
+
+chromadb>=0.5.0               # Vector database for regulation article index
+sentence-transformers>=3.0.0  # Local embeddings (all-MiniLM-L6-v2, no API key needed)
+openai>=1.0.0                  # Optional: GPT-4o explanation synthesis (needs OPENAI_API_KEY)
+pandas>=2.0.0                  # Data loading and output CSV handling
+numpy>=1.26.0                  # Numerical operations
+matplotlib>=3.8.0              # Visualisations in notebook
+seaborn>=0.13.0                # Visualisation styling
