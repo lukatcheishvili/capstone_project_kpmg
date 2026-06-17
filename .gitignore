@@ -46,3 +46,5 @@ dist/
 # ChromaDB vector index (Phase 5)
 data/chroma_db/
 rag/chroma_db/
+.DS_Store
+**/.DS_Store
