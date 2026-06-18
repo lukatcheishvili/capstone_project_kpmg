@@ -28,8 +28,10 @@ dist/
 .vscode/
 .idea/
 
-# Prophet model files
-*.pkl
+# Large model pickle files (Prophet, trained ML models)
+models/*.pkl
+# Allow RAG corpus pickle (small, needed for agent training)
+!rag/rag_corpus_v1.pkl
 
 # ChromaDB vector index (Phase 5)
 data/chroma_db/
